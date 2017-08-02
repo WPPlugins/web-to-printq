@@ -1,0 +1,14 @@
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType text/javascript "access 1 month"
+ExpiresByType text/x-javascript "access 1 month"
+ExpiresByType application/javascript "access 1 month"
+ExpiresByType application/x-javascript "access 1 month"
+ExpiresByType application/json "access 1 month"
+ExpiresDefault "access plus 2 days"
+</IfModule>
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js)$">
+    Header append Vary: Accept-Encoding
+  </FilesMatch>
+</IfModule>
